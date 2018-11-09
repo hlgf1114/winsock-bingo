@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1541773078 source:c:\users\eheeku\desktop\study\network\client_concave\main.c
+	<winsock2.h>
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	<unistd.h>
+

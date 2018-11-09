@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1541773184 source:d:\gitstg\concave\server_concave\main.c
+	<winsock2.h>
+	<stdlib.h>
+	<stdio.h>
+	<time.h>
+	<string.h>
+	<unistd.h>
+
