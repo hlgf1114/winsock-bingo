@@ -6,7 +6,7 @@
 #include <string.h>
 #include <unistd.h>
 
-#define SERVERIP "127.0.0.1"
+#define SERVERIP "hlgf1114.iptime.org"
 #define SERVERPORT 9000
 
 #define BOARD_SIZE 5
@@ -62,6 +62,8 @@ int recvn(SOCKET s, char *buf, int len, int flags)
 
 	return (len - left);
 }
+
+
 
 void sockSetting(){
     int retval;

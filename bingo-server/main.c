@@ -5,6 +5,9 @@
 #include <string.h>
 #include <unistd.h>
 
+#include "getHostName.h"
+
+#define SERVERIP "hlgf1114.iptiem.org"
 #define SERVERPORT 9000
 #define BUFSIZE    512
 
@@ -59,11 +62,15 @@ void sockSetting(){
       if(listen_sock == INVALID_SOCKET)
             err_quit("socket()");
 
+      // get address by host
+      IN_ADDR addr;
+      getIpAddr(SERVERIP, &addr);
+
       // bind()
       SOCKADDR_IN serveraddr;
       ZeroMemory(&serveraddr, sizeof(serveraddr));
       serveraddr.sin_family = AF_INET;
-      serveraddr.sin_addr.s_addr = htonl(INADDR_ANY);
+      serveraddr.sin_addr.s_addr = htonl(addr);
       serveraddr.sin_port = htons(SERVERPORT);
       retval = bind(listen_sock, (SOCKADDR *)&serveraddr, sizeof(serveraddr));
       if(retval == SOCKET_ERROR)
