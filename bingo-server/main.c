@@ -70,7 +70,7 @@ void sockSetting(){
       SOCKADDR_IN serveraddr;
       ZeroMemory(&serveraddr, sizeof(serveraddr));
       serveraddr.sin_family = AF_INET;
-      serveraddr.sin_addr.s_addr = htonl(addr);
+      serveraddr.sin_addr.s_addr = inet_addr(addr.s_addr);
       serveraddr.sin_port = htons(SERVERPORT);
       retval = bind(listen_sock, (SOCKADDR *)&serveraddr, sizeof(serveraddr));
       if(retval == SOCKET_ERROR)
