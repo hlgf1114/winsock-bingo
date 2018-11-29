@@ -1,5 +1,6 @@
 #pragma once
 #include <winsock2.h>
 #include <stdbool.h>
+#include <sys/types.h>
 
-bool getIpAddr(char* name, IN_ADDR* addr);
+IN_ADDR getIpAddr(char* name);

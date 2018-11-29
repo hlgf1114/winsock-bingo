@@ -6,6 +6,8 @@
 #include <string.h>
 #include <unistd.h>
 
+#include "getHostName.h"
+
 #define SERVERIP "hlgf1114.iptime.org"
 #define SERVERPORT 9000
 
@@ -65,7 +67,7 @@ int recvn(SOCKET s, char *buf, int len, int flags)
 
 
 
-void sockSetting(){
+int sockSetting(){
     int retval;
 
 	// 윈속 초기화
@@ -81,7 +83,8 @@ void sockSetting(){
 	SOCKADDR_IN serveraddr;
 	ZeroMemory(&serveraddr, sizeof(serveraddr));
 	serveraddr.sin_family = AF_INET;
-	serveraddr.sin_addr.s_addr = inet_addr(SERVERIP);
+    // get address by host
+	serveraddr.sin_addr.s_addr = htonl(getIpAddr(SERVERIP).s_addr);
 	serveraddr.sin_port = htons(SERVERPORT);
 	retval = connect(sock, (SOCKADDR *)&serveraddr, sizeof(serveraddr));
 	if(retval == SOCKET_ERROR) err_quit("connect()");

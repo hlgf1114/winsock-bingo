@@ -1,13 +1,18 @@
 #include "getHostName.h"
 
-bool getIpAddr(char* name, IN_ADDR* addr) {
+IN_ADDR getIpAddr(char* name) {
 
-    HOSTENT* ptr = gethostbyname(name);
-    if(ptr == NULL) {
-        err_display("gethostbyname()");
-        return FALSE;
+    // 호스트로부터 IP 주소를 받아온다
+    HOSTENT* hostaddr = gethostbyname(name);
+    int *add;
+    if(hostaddr == NULL) {
+        perror("ERROR : ");
+        exit(0);
     }
+    // 호스트로부터 IP 주소를 받아온다
+    add = (long int*)*hostaddr->h_addr;
 
-    memcpy(addr, ptr->h_addr, ptr->h_length);
-    return TRUE;
+    IN_ADDR ipaddr;
+    ipaddr.s_addr = add;
+    return ipaddr;
 }

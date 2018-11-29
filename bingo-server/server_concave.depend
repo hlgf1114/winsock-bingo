@@ -7,18 +7,20 @@
 	<string.h>
 	<unistd.h>
 
-1542806104 source:e:\github\winsock-bingo\bingo-server\gethostname.h
+1542967189 source:e:\github\winsock-bingo\bingo-server\gethostname.h
 	<winsock2.h>
 	<stdbool.h>
+	<sys/types.h>
 
-1542806122 source:e:\github\winsock-bingo\bingo-server\gethostname.c
+1542968827 source:e:\github\winsock-bingo\bingo-server\gethostname.c
 	"getHostName.h"
 
-1542806104 e:\github\winsock-bingo\bingo-server\gethostname.h
+1542967274 e:\github\winsock-bingo\bingo-server\gethostname.h
 	<winsock2.h>
 	<stdbool.h>
+	<sys/types.h>
 
-1542806602 source:e:\github\winsock-bingo\bingo-server\main.c
+1542967263 source:e:\github\winsock-bingo\bingo-server\main.c
 	<winsock2.h>
 	<stdlib.h>
 	<stdio.h>
